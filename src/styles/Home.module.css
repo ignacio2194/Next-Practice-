@@ -1,0 +1,62 @@
+.columnas{
+list-style: none;
+padding: 0;
+display: grid;
+gap: 15px;
+grid-template-columns: repeat(auto-fill , minmax(150px,1fr));
+}
+.card{
+  border: 1px solid #ccc;
+  padding: 15px;
+  position: relative;
+  border-radius: 5px;
+  height: 120px;
+}
+.imagen{
+  position: absolute;
+  right: -15px;
+  bottom: 0;
+  top: 0;
+}
+.nombreTipos h3{
+font-size: 1.3rem;
+margin:  0;
+}
+.nombreTipos{
+  color: #fff;
+  margin: 0;
+  text-transform: capitalize;
+
+}
+.tipos{
+  display: flex;
+  flex-direction: column;
+
+}
+.tipo{
+margin: 4px 3px 0 0;
+background-color: rgba(255, 255,255, 0.3);
+border-radius: 20px;
+align-self: flex-start;
+line-height: 16px;
+font-weight: bold;
+text-transform: capitalize;
+padding: 3px 10px;
+}
+.botonestipo{
+  display: flex;
+}
+.botonFiltro{
+  border: none;
+  padding: 3px 15px;
+  color: #fff;
+  margin-right:10px ;
+  border-radius: 20px;
+}
+.listadoTipos{
+  display: flex;
+  overflow: auto;
+}
+.botonesTodos{
+  color: #000;
+}
