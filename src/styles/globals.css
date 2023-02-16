@@ -101,6 +101,13 @@ a {
   text-decoration: none;
 }
 
+li{
+  list-style: none;
+  color: black;
+  font-weight: bold;
+
+}
+
 @media (prefers-color-scheme: light) {
   html {
     color-scheme: light;
@@ -120,6 +127,7 @@ a {
 
 .fire {
   background: #e95c4d;
+
 }
 
 .normal {

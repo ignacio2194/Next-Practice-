@@ -4,7 +4,7 @@ import Homecss from "@/styles/Home.module.css";
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
-export default function Home({ pokemonListo }) {
+export default function Home({ pokemonListo,tipos }) {
 
 
   const [pokemon, setPokemon] = useState(pokemonListo);
@@ -43,7 +43,7 @@ export default function Home({ pokemonListo }) {
           Mostrar todos
         </button>
         <div className={Homecss.listadoTipos}>
-          {/* {tipos.map((tipo, index) => (
+          {tipos.map((tipo, index) => (
             <button
               onClick={() => filtrar(tipo.name)}
               key={index}
@@ -51,7 +51,7 @@ export default function Home({ pokemonListo }) {
             >
               {tipo.name}
             </button>
-          ))} */}
+          ))}
         </div>
       </div>
       <h1>Pokemones</h1>
@@ -93,6 +93,7 @@ export async function getStaticProps() {
   const tiposURl = await fetch("https://pokeapi.co/api/v2/type");
   const tipos = await tiposURl.json();
 
+
   const traerPokemon = async (numero) => {
     const res = await fetch(
       `https://pokeapi.co/api/v2/pokemon/${numero}?limit=250&offset=0.`
@@ -118,6 +119,7 @@ export async function getStaticProps() {
   return {
     props: {
       pokemonListo,
+      tipos:tipos.results,
    
     },
   };
